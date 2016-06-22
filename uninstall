@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# Removes a file only if it is a symlink.
+rm_if_link() { [ ! -L "$1" ] || rm -v "$1"; }
+
+# Remove symlinks.
+rm_if_link $HOME/.vim
+rm_if_link $HOME/.vimrc
+
+rm_if_link $HOME/.tmux.conf
+
+rm_if_link $HOME/.oh-my-zsh
+rm_if_link $HOME/.zshrc
+
+rm_if_link $HOME/.Xresources

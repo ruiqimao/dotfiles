@@ -1,0 +1,71 @@
+! DPI
+Xft.dpi: 90
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! Terminal colour scheme
+
+! Sprunge scheme
+*background: #1a1a1a
+*foreground: #c7c7c7
+
+! Black and "bright" black
+*color0: #000000
+*color8: #686868
+
+! Red and "bright" red
+*color1: #ff2600
+*color9: #ff6e67
+
+! Green and "bright" green
+*color2: #00f909
+*color10: #5ffa68
+
+! Yellow and "bright" yellow
+*color3: #fffb00
+*color11: #fffc67
+
+! Blue and "bright" blue
+*color4: #3465a4
+*color12: #729fcf
+
+! Magenta and "bright" magenta
+*color5: #ff40ff
+*color13: #ff77ff
+
+! Cyan and "bright" cyan
+*color6: #50f9ff
+*color14: #60fdff
+
+! White and "bright" white
+*color7: #f0f0f0
+*color15: #ffffff
+
+! ---- URxvt-specific settings ----- !
+
+! Perl extensions:
+URxvt.perl-ext-common: default,matcher
+
+! Window and icon stuff:
+URxvt.geometry: 160x40
+URxvt.iconFile: /usr/share/icons/Numix-Circle/scalable/apps/xterm-color.svg
+
+! Font stuff:
+URxvt.font: xft:Liberation Mono:antialias=true:hinting=true:pixelsize=12
+URxvt.boldFont: xft:Liberation Mono:bold:antialias=true:hinting=true:pixelsize=12
+URxvt.letterSpace: -2
+
+! Clickable URLs:
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+
+! Scrollbar style:
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
+
+! Ctl+Shift:
+URxvt.iso14755: false
