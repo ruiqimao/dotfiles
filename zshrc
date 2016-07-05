@@ -15,6 +15,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
+# Remove cd and ls from command history
+setopt HISTIGNORESPACE
+alias cd=' cd'
+alias ls=' ls --color=tty'
+
 # Local zshrc
 ZSHRC_LOCAL=$HOME/.zshrc.local
 if [[ ! -a $ZSHRC_LOCAL ]]; then
