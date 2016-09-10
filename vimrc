@@ -12,6 +12,7 @@ set backspace=2
 " Visual cues
 set cursorline
 set nu
+set relativenumber
 
 " RegEx
 set gdefault
