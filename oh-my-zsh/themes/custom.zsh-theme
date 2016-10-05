@@ -1,7 +1,7 @@
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 
 local parent="$(ps -p $PPID -o comm=)"
-if [[ $parent == "login" || $parent == "gnome-terminal-" || $parent == "urxvt" ]]; then
+if [[ $parent == "login" || $parent == "gnome-terminal-" || $parent == "urxvt" || $parent == "tmux: server" ]]; then
 	parent=""
 else
 	parent="%{$fg[cyan]%}${parent} "
