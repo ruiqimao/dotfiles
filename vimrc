@@ -30,7 +30,7 @@ colo monokai
 " <F5> behavior
 au FileType python map <F5> :!clear && python -i %<CR>
 au FileType python map <F6> :!clear && python3 -i %<CR>
-au FileType tex map <F5> :!clear && pdflatex % && latexmk -c %<CR>
+au FileType tex map <F5> :!clear && pdflatex -shell-escape % && latexmk -c %<CR>
 au FileType javascript map <F5> :!clear && node %<CR>
 
 " Paste behavior
