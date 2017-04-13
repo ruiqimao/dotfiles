@@ -4,6 +4,7 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 syntax on
+:command GoogleStyle set tabstop=2 shiftwidth=2 expandtab
 
 " Input
 set mouse=a
@@ -28,7 +29,7 @@ let g:rehash256 = 1
 colo monokai
 
 " <F5> behavior
-au FileType python map <F5> :!clear && python -i %<CR>
+au FileType python map <F5> :!clear && python2 -i %<CR>
 au FileType python map <F6> :!clear && python3 -i %<CR>
 au FileType tex map <F5> :!clear && pdflatex -shell-escape % && latexmk -c %<CR>
 au FileType javascript map <F5> :!clear && node %<CR>
