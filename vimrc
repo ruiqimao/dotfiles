@@ -15,6 +15,7 @@ set backspace=2
 set cursorline
 set nu
 set relativenumber
+set cc=100
 
 " RegEx
 set gdefault
