@@ -35,6 +35,7 @@ au FileType python map <F6> :!clear && python3 -i %<CR>
 au FileType tex map <F5> :!clear && pdflatex -shell-escape % && latexmk -c %<CR>
 au FileType javascript map <F5> :!clear && node %<CR>
 au FileType go set noexpandtab
+au FileType make set noexpandtab
 
 " Paste behavior
 let &t_SI .= "\<Esc>[?2004h"
