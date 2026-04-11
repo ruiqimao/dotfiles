@@ -10,3 +10,6 @@ ln -s $PWD/oh-my-zsh $HOME/.oh-my-zsh
 ln -s $PWD/zshrc $HOME/.zshrc
 
 ln -s $PWD/Xresources $HOME/.Xresources
+
+mkdir -p $HOME/.config/kitty
+ln -s $PWD/kitty.conf $HOME/.config/kitty/kitty.conf
