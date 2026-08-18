@@ -7,7 +7,7 @@ if [ "$parent" != "" ]; then
   PROMPT+="$parent "
 fi
 
-PROMPT+='${ret_status}%{$fg_bold[green]%}%p'
+PROMPT+='${ret_status}%{$fg_bold[green]%}%p '
 PROMPT+='%{$fg[white]%}%~ '
 PROMPT+='%{$fg_bold[blue]%}$(git_prompt_info)'
 PROMPT+='%{$reset_color%}'
