@@ -13,3 +13,4 @@ rm_if_link $HOME/.oh-my-zsh
 rm_if_link $HOME/.zshrc
 
 rm_if_link $HOME/.Xresources
+rm_if_link $HOME/.config/kitty/kitty.conf
