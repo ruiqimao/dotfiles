@@ -26,6 +26,9 @@ working-directory = home
 window-inherit-working-directory = false
 tab-inherit-working-directory = false
 
+# macOS icon
+macos-icon=xray
+
 # Color Scheme
 background = #1a1a1a
 foreground = #c7c7c7
