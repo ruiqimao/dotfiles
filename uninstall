@@ -1,16 +1,38 @@
-#! /bin/bash
+#!/bin/bash
 
-# Removes a file only if it is a symlink.
-rm_if_link() { [ ! -L "$1" ] || rm -v "$1"; }
+set -euo pipefail
 
-# Remove symlinks.
-rm_if_link $HOME/.vim
-rm_if_link $HOME/.vimrc
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-rm_if_link $HOME/.tmux.conf
+unlink() {
+	dest="$1"
 
-rm_if_link $HOME/.oh-my-zsh
-rm_if_link $HOME/.zshrc
+	[ -L "$dest" ] || return 0
 
-rm_if_link $HOME/.Xresources
-rm_if_link $HOME/.config/kitty/kitty.conf
+	target="$(readlink "$dest")"
+
+	case "$target" in
+		/*) ;;
+		*) target="$(cd "$(dirname "$dest")" && pwd)/$target" ;;
+	esac
+
+	if [ "$target" = "$DOTFILES" ] || [[ "$target" == "$DOTFILES"/* ]]; then
+		rm -v -- "$dest"
+	else
+		echo "skipped  $dest (points to $target)" >&2
+	fi
+}
+
+unlink "$HOME/.vim"
+unlink "$HOME/.vimrc"
+
+unlink "$HOME/.tmux.conf"
+
+unlink "$HOME/.zsh"
+unlink "$HOME/.oh-my-zsh"
+unlink "$HOME/.zshrc"
+
+unlink "$HOME/.Xresources"
+unlink "$HOME/.config/kitty/kitty.conf"
+
+echo "done"

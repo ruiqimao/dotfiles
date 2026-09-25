@@ -1,15 +1,40 @@
-#! /bin/bash
+#!/bin/bash
 
-# Create symlinks.
-ln -s $PWD/vim $HOME/.vim
-ln -s $PWD/vimrc $HOME/.vimrc
+set -euo pipefail
 
-ln -s $PWD/tmux.conf $HOME/.tmux.conf
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-ln -s $PWD/oh-my-zsh $HOME/.oh-my-zsh
-ln -s $PWD/zshrc $HOME/.zshrc
+# oh-my-zsh submodule.
+git -C "$DOTFILES" submodule update --init
 
-ln -s $PWD/Xresources $HOME/.Xresources
+link() {
+	src="$1"
+	dest="$2"
 
-mkdir -p $HOME/.config/kitty
-ln -s $PWD/kitty.conf $HOME/.config/kitty/kitty.conf
+	mkdir -p "$(dirname -- "$dest")"
+
+	if [ -L "$dest" ]; then
+		ln -sfn "$src" "$dest"
+		echo "updated  $dest -> $src"
+	elif [ -e "$dest" ]; then
+		echo "skipped  $dest (exists and is not a symlink)" >&2
+	else
+		ln -s "$src" "$dest"
+		echo "created  $dest -> $src"
+	fi
+}
+
+link "$DOTFILES/vim"             "$HOME/.vim"
+link "$DOTFILES/vim/vimrc"       "$HOME/.vimrc"
+
+link "$DOTFILES/tmux/tmux.conf"  "$HOME/.tmux.conf"
+
+link "$DOTFILES/zsh"             "$HOME/.zsh"
+link "$DOTFILES/zsh/oh-my-zsh"   "$HOME/.oh-my-zsh"
+link "$DOTFILES/zsh/zshrc"       "$HOME/.zshrc"
+
+link "$DOTFILES/x11/Xresources"  "$HOME/.Xresources"
+
+link "$DOTFILES/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+
+echo "done"
