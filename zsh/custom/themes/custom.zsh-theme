@@ -1,9 +1,20 @@
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-local parent="%{$fg[cyan]%}$(ps -p $PPID -o comm=)"
+
+local parent_comm
+parent_comm="$(ps -p $PPID -o comm=)"
+case $parent_comm in
+  /usr/bin/login|login)
+    parent_comm=""
+    ;;
+esac
+if [[ -n $TERM_PROGRAM && $parent_comm == *"$TERM_PROGRAM"* ]]; then
+  parent_comm=""
+fi
+local parent="%{$fg[cyan]%}${parent_comm:t}"
 
 PROMPT=''
 
-if [ "$parent" != "" ]; then
+if [[ -n $parent_comm ]]; then
   PROMPT+="$parent "
 fi
 
