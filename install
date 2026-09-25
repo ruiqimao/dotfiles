@@ -4,7 +4,6 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# oh-my-zsh submodule.
 git -C "$DOTFILES" submodule update --init
 
 link() {
