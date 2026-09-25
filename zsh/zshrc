@@ -13,7 +13,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # PATH variable
-export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # Remove cd and ls from command history
