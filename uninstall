@@ -34,5 +34,6 @@ unlink "$HOME/.zshrc"
 
 unlink "$HOME/.Xresources"
 unlink "$HOME/.config/kitty/kitty.conf"
+unlink "$HOME/.config/ghostty/config"
 
 echo "done"

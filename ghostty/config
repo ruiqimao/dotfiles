@@ -1,0 +1,63 @@
+# Font Configuration
+font-family = "Liberation Mono for Powerline"
+font-size = 12
+font-thicken = true
+adjust-cell-width = 5%
+adjust-cell-height = 5%
+
+# Cursor Customization
+cursor-color = #ffffff
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Audio
+desktop-notifications = false
+
+# Window Layout
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-padding-color = background
+quit-after-last-window-closed = true
+
+# Working directory
+working-directory = home
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+
+# Color Scheme
+background = #1a1a1a
+foreground = #c7c7c7
+
+# Black
+palette = 0=#000000
+palette = 8=#686868
+
+# Red
+palette = 1=#f13c26
+palette = 9=#ff6e67
+
+# Green
+palette = 2=#00f909
+palette = 10=#5ffa68
+
+# Yellow
+palette = 3=#fffb00
+palette = 11=#fffc67
+
+# Blue
+palette = 4=#5a8cc8
+palette = 12=#729fcf
+
+# Magenta
+palette = 5=#ff40ff
+palette = 13=#ff77ff
+
+# Cyan
+palette = 6=#50f9ff
+palette = 14=#60fdff
+
+# White
+palette = 7=#f0f0f0
+palette = 15=#ffffff
