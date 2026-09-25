@@ -32,10 +32,7 @@ link "$DOTFILES/zsh"             "$HOME/.zsh"
 link "$DOTFILES/zsh/oh-my-zsh"   "$HOME/.oh-my-zsh"
 link "$DOTFILES/zsh/zshrc"       "$HOME/.zshrc"
 
-link "$DOTFILES/x11/Xresources"  "$HOME/.Xresources"
-
 link "$DOTFILES/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-
 link "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
 
 echo "done"
