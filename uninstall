@@ -32,6 +32,8 @@ unlink "$HOME/.zsh"
 unlink "$HOME/.oh-my-zsh"
 unlink "$HOME/.zshrc"
 
+unlink "$HOME/.jjconfig.toml"
+
 unlink "$HOME/.config/kitty/kitty.conf"
 unlink "$HOME/.config/ghostty/config"
 
